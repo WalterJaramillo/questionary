@@ -25,7 +25,8 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Assume all access to the app is happening through a SSL-terminating reverse proxy.
-  config.assume_ssl = true
+  # Disabled for Render compatibility - SSL is terminated at the proxy level.
+  # config.assume_ssl = true
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # Disabled for Render compatibility - SSL is terminated at the proxy level.
