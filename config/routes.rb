@@ -17,4 +17,8 @@ Rails.application.routes.draw do
   get  "/quiz",  to: "quiz#quiz",  as: :quiz
   post "/quiz/submit", to: "quiz#submit", as: :submit_quiz
   get  "/results/:id", to: "quiz#results", as: :results
+
+  # Admin routes
+  get  "/admin/import", to: "admin#import", as: :admin_import
+  post "/admin/import", to: "admin#import_questions"
 end
