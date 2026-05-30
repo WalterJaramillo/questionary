@@ -31,9 +31,6 @@ Rails.application.configure do
   # Disabled for Render compatibility - SSL is terminated at the proxy level.
   # config.force_ssl = true
 
-  # Configure session cookie to work with reverse proxy (Render).
-  config.session_store :cookie_store, key: "_questionary_session", secure: true, same_site: :lax
-
   # Skip http-to-https redirect for the default health check endpoint.
   # config.ssl_options = { redirect: { exclude: ->(request) { request.path == "/up" } } }
 
