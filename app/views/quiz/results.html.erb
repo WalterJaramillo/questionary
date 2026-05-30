@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+  <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+    <div class="card mt-4 mt-md-5">
+      <div class="card-body p-4 p-md-5 text-center">
+        <h1 class="h2 fw-bold mb-4">Resultados</h1>
+
+        <% percentage = ((@attempt.score.to_f / @attempt.total_questions) * 100).round %>
+        <% score_class = percentage >= 70 ? 'success' : percentage >= 50 ? 'warning' : 'danger' %>
+
+        <div class="score-circle <%= score_class %> text-white mb-4">
+          <span class="fs-1 fw-bold"><%= @attempt.score %></span>
+          <span class="fs-6">de <%= @attempt.total_questions %></span>
+        </div>
+
+        <h2 class="h4 fw-bold mb-2"><%= percentage %>%</h2>
+        <p class="text-muted mb-4">
+          <%= percentage >= 70 ? '¡Excelente trabajo!' : percentage >= 50 ? 'Buen esfuerzo, puedes mejorar.' : 'Necesitas repasar los temas.' %>
+        </p>
+
+        <hr>
+
+        <div class="text-start">
+          <p class="mb-1"><strong>Estudiante:</strong> <%= @student.name %></p>
+          <p class="mb-1"><strong>Cédula:</strong> <%= @student.cedula %></p>
+          <p class="mb-1"><strong>Correo:</strong> <%= @student.email %></p>
+          <p class="mb-0"><strong>Intento:</strong> <%= @student.attempts_count %> de <%= Student::MAX_ATTEMPTS %></p>
+        </div>
+
+        <% if @student.attempts_count < Student::MAX_ATTEMPTS %>
+          <hr>
+          <p class="text-muted">Aún tienes intentos disponibles.</p>
+          <%= link_to 'Volver al inicio', root_path, class: 'btn btn-outline-primary' %>
+        <% else %>
+          <hr>
+          <p class="text-muted mb-0">Has completado todos los intentos disponibles.</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

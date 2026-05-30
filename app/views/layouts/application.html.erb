@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <title><%= content_for(:title) || "Questionary" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,18 +11,112 @@
 
     <%= yield :head %>
 
-    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
-    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
-
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+
+    <style>
+      body {
+        background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+        min-height: 100vh;
+      }
+      .card {
+        border: none;
+        border-radius: 1rem;
+        box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+        border: none;
+        font-weight: 600;
+      }
+      .btn-primary:hover {
+        background: linear-gradient(135deg, #0096c7 0%, #005f8a 100%);
+      }
+      .text-primary {
+        color: #00b4d8 !important;
+      }
+      .bg-primary {
+        background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%) !important;
+      }
+      .question-card {
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+        border-left: 4px solid #00b4d8;
+      }
+      .question-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0.75rem 1.5rem rgba(0, 180, 216, 0.2);
+      }
+      .form-check-label {
+        cursor: pointer;
+        padding: 0.6rem 0.75rem;
+        border-radius: 0.5rem;
+        border: 2px solid #e9ecef;
+        transition: all 0.15s ease;
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+      .form-check-label:hover {
+        border-color: #00b4d8;
+        background-color: #f0faff;
+      }
+      .form-check-input:checked + .form-check-label {
+        border-color: #0077b6;
+        background-color: #e0f4ff;
+        font-weight: 600;
+      }
+      .score-circle {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+      }
+      .score-circle.success {
+        background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+      }
+      .score-circle.warning {
+        background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+      }
+      .score-circle.danger {
+        background: linear-gradient(135deg, #d63031 0%, #e17055 100%);
+      }
+      .progress-bar {
+        background: linear-gradient(90deg, #00b4d8 0%, #0077b6 100%);
+      }
+      .badge-page {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(4px);
+      }
+      .pagination .page-link {
+        border: none;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 0 2px;
+        border-radius: 0.5rem;
+      }
+      .pagination .page-item.active .page-link {
+        background: #00b4d8;
+        color: #fff;
+      }
+      .pagination .page-link:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    </style>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container py-4">
+      <%= yield %>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

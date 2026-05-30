@@ -1,0 +1,65 @@
+schema: spec-driven
+
+context: |
+  Tech stack: Rails 8.1.3, Ruby 4.0.1, PostgreSQL, importmap, turbo, stimulus, solid_cache, solid_queue, solid_cable, puma, kamal
+  Architecture: Standard Rails MVC, Hotwire (Turbo + Stimulus), importmap for JS
+  Testing: Minitest (built-in), Capybara + Selenium for system tests, parallelized
+  Style: RuboCop (Rails Omakase), Brakeman, bundler-audit
+  CI: GitHub Actions (lint, test, system-test, security scans)
+  Deployment: Kamal with Docker
+
+strict_tdd: false
+
+testing:
+  strict_tdd_mode: disabled
+  detected: "2026-05-30"
+  test_runner:
+    command: "bin/rails test"
+    framework: Minitest (Rails built-in)
+  test_layers:
+    unit:
+      available: true
+      tool: Minitest
+    integration:
+      available: true
+      tool: Minitest + Rails integration helpers
+    e2e:
+      available: true
+      tool: Capybara + Selenium
+  coverage:
+    available: false
+    command: "—"
+  quality_tools:
+    linter:
+      available: true
+      command: "bin/rubocop"
+    type_checker:
+      available: false
+      command: "—"
+    formatter:
+      available: false
+      command: "—"
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+    - Identify affected modules/packages
+  specs:
+    - Use Given/When/Then format for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+  design:
+    - Include sequence diagrams for complex flows
+    - Document architecture decisions with rationale
+  tasks:
+    - Group tasks by phase (infrastructure, implementation, testing)
+    - Use hierarchical numbers (1.1, 1.2, etc.)
+    - Keep tasks small enough to complete in one session
+  apply:
+    - Follow existing Rails conventions and patterns
+    - Use standard Rails generators for models, controllers, migrations
+    - Prefer Hotwire (Turbo/Stimulus) over custom JS
+  verify:
+    - Run tests: bin/rails test
+    - Compare implementation against every spec scenario
+  archive:
+    - Warn before merging destructive deltas (large removals)

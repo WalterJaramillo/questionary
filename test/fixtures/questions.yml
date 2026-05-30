@@ -1,0 +1,10 @@
+<% (1..35).each do |i| %>
+question_<%= i %>:
+  item: <%= i %>
+  question_text: "Test question number <%= i %>"
+  option_a: "Option A for question <%= i %>"
+  option_b: "Option B for question <%= i %>"
+  option_c: "Option C for question <%= i %>"
+  option_d: "Option D for question <%= i %>"
+  correct_answer: <%= ["a", "b", "c", "d"][i % 4].inspect %>
+<% end %>
