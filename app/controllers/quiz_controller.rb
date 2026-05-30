@@ -64,6 +64,150 @@ class QuizController < ApplicationController
       redirect_to results_path(attempt), alert: "Este intento ya fue completado" and return
     end
 
+    unless session[:question_ids].present?
+      redirect_to root_path, alert: "Sesión expirada. Por favor inicia de nuevo." and return
+    end
+
+    answers_params = params[:answers]
+    answers_hash = answers_params&.to_unsafe_h || {}
+
+    session[:answers] ||= {}
+    session[:answers].merge!(answers_hash)
+
+    total_answered = session[:answers].size
+    next_page = params[:next_page].to_i
+
+    if next_page > 0 && next_page <= TOTAL_PAGES
+      start_idx = (@page.to_i - 1) * QUESTIONS_PER_PAGE
+      page_ids = session[:question_ids][start_idx, QUESTIONS_PER_PAGE].map(&:to_s)
+      unanswered = page_ids.reject { |id| session[:answers][id].present? }
+
+      if unanswered.any?
+        flash.now[:alert] = "Debes responder todas las preguntas de esta página antes de continuar"
+        @page = @page.to_i
+        @total_pages = TOTAL_PAGES
+        page_ids_for_view = session[:question_ids][start_idx, QUESTIONS_PER_PAGE]
+        @questions = Question.where(id: page_ids_for_view).to_a
+        @questions.sort_by! { |q| session[:question_ids].index(q.id) }
+        @attempt = attempt
+        @answered = session[:answers]
+        render :quiz, status: :unprocessable_entity and return
+      end
+    end
+
+    if attempt.completed?
+      redirect_to results_path(attempt), alert: "Este intento ya fue completado" and return
+    end
+
+    unless session[:question_ids].present?
+      redirect_to root_path, alert: "Sesión expirada. Por favor inicia de nuevo." and return
+    end
+
+    answers_params = params[:answers]
+    answers_hash = answers_params&.to_unsafe_h || {}
+
+    session[:answers] ||= {}
+    session[:answers].merge!(answers_hash)
+
+    total_answered = session[:answers].size
+    next_page = params[:next_page].to_i
+
+    if next_page > 0 && next_page <= TOTAL_PAGES
+      start_idx = (@page.to_i - 1) * QUESTIONS_PER_PAGE
+      page_ids = session[:question_ids][start_idx, QUESTIONS_PER_PAGE].map(&:to_s)
+      unanswered = page_ids.reject { |id| session[:answers][id].present? }
+
+      if unanswered.any?
+        flash.now[:alert] = "Debes responder todas las preguntas de esta página antes de continuar"
+        @page = @page.to_i
+        @total_pages = TOTAL_PAGES
+        page_ids_for_view = session[:question_ids][start_idx, QUESTIONS_PER_PAGE]
+        @questions = Question.where(id: page_ids_for_view).to_a
+        @questions.sort_by! { |q| session[:question_ids].index(q.id) }
+        @attempt = attempt
+        @answered = session[:answers]
+        render :quiz, status: :unprocessable_entity and return
+      end
+    end
+
+    if attempt.completed?
+      redirect_to results_path(attempt), alert: "Este intento ya fue completado" and return
+    end
+
+    unless session[:question_ids].present?
+      redirect_to root_path, alert: "Sesión expirada. Por favor inicia de nuevo." and return
+    end
+
+    answers_params = params[:answers]
+    answers_hash = answers_params&.to_unsafe_h || {}
+
+    session[:answers] ||= {}
+    session[:answers].merge!(answers_hash)
+
+    total_answered = session[:answers].size
+    next_page = params[:next_page].to_i
+
+    if next_page > 0 && next_page <= TOTAL_PAGES
+      start_idx = (@page.to_i - 1) * QUESTIONS_PER_PAGE
+      page_ids = session[:question_ids][start_idx, QUESTIONS_PER_PAGE].map(&:to_s)
+      unanswered = page_ids.reject { |id| session[:answers][id].present? }
+
+      if unanswered.any?
+        flash.now[:alert] = "Debes responder todas las preguntas de esta página antes de continuar"
+        @page = @page.to_i
+        @total_pages = TOTAL_PAGES
+        page_ids_for_view = session[:question_ids][start_idx, QUESTIONS_PER_PAGE]
+        @questions = Question.where(id: page_ids_for_view).to_a
+        @questions.sort_by! { |q| session[:question_ids].index(q.id) }
+        @attempt = attempt
+        @answered = session[:answers]
+        render :quiz, status: :unprocessable_entity and return
+      end
+    end
+
+    if attempt.completed?
+      redirect_to results_path(attempt), alert: "Este intento ya fue completado" and return
+    end
+
+    unless session[:question_ids].present?
+      redirect_to root_path, alert: "Sesión expirada. Por favor inicia de nuevo." and return
+    end
+
+    answers_params = params[:answers]
+    answers_hash = answers_params&.to_unsafe_h || {}
+
+    session[:answers] ||= {}
+    session[:answers].merge!(answers_hash)
+
+    total_answered = session[:answers].size
+    next_page = params[:next_page].to_i
+
+    if next_page > 0 && next_page <= TOTAL_PAGES
+      start_idx = (@page.to_i - 1) * QUESTIONS_PER_PAGE
+      page_ids = session[:question_ids][start_idx, QUESTIONS_PER_PAGE].map(&:to_s)
+      unanswered = page_ids.reject { |id| session[:answers][id].present? }
+
+      if unanswered.any?
+        flash.now[:alert] = "Debes responder todas las preguntas de esta página antes de continuar"
+        @page = @page.to_i
+        @total_pages = TOTAL_PAGES
+        page_ids_for_view = session[:question_ids][start_idx, QUESTIONS_PER_PAGE]
+        @questions = Question.where(id: page_ids_for_view).to_a
+        @questions.sort_by! { |q| session[:question_ids].index(q.id) }
+        @attempt = attempt
+        @answered = session[:answers]
+        render :quiz, status: :unprocessable_entity and return
+      end
+    end
+
+    if attempt.completed?
+      redirect_to results_path(attempt), alert: "Este intento ya fue completado" and return
+    end
+
+    unless session[:question_ids].present?
+      redirect_to root_path, alert: "Sesión expirada. Por favor inicia de nuevo." and return
+    end
+
     answers_params = params[:answers]
     answers_hash = answers_params&.to_unsafe_h || {}
 
