@@ -79,6 +79,8 @@ Rails.application.configure do
   config.active_record.attributes_for_inspect = [ :id ]
 
   # Enable DNS rebinding protection and other `Host` header attacks.
-  config.hosts << /.*\.onrender\.com/
-  config.hosts << /.*\.render\.com/
+  config.hosts = [
+    /.*\.onrender\.com/,
+    /.*\.render\.com/
+  ]
 end
