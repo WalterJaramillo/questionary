@@ -8,10 +8,5 @@ class ResultMailer < ApplicationMailer
     mail(
       subject: "Quiz completado — #{@student.name} — #{@attempt.score}/#{@attempt.total_questions}"
     )
-  end
-end
-end
-end
-end
 end
 end
