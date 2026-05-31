@@ -72,7 +72,7 @@ end
 group :production do
   gem "resend"
 end
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
