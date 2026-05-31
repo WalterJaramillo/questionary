@@ -51,9 +51,14 @@ Rails.application.configure do
   # config.active_job.queue_adapter = :resque
 
   # Email delivery via Resend
-  config.action_mailer.delivery_method = :resend
-  config.action_mailer.resend_settings = {
-    api_key: ENV.fetch("RESEND_API_KEY")
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.resend.com",
+    port: 587,
+    user_name: "resend",
+    password: ENV.fetch("RESEND_API_KEY"),
+    authentication: :plain,
+    enable_starttls_auto: true
   }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
