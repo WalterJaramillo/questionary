@@ -69,7 +69,9 @@ group :development do
   gem "letter_opener_web"
 end
 
-group :test do
+group :production do
+  gem "resend"
+end
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
