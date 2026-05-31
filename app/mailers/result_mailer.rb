@@ -1,5 +1,5 @@
 class ResultMailer < ApplicationMailer
-  default from: "Questionary <onboarding@resend.dev>", to: "wljaramillo6@gmail.com"
+  default from: "Questionary <onboarding@resend.dev>", to: "walter.jaramillo51@hotmail.com"
 
   def completion_email
     @attempt = params[:attempt]
