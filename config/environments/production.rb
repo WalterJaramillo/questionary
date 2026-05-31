@@ -52,9 +52,6 @@ Rails.application.configure do
 
   # Email delivery via Resend HTTP API (avoids SMTP timeout on Render)
   config.action_mailer.delivery_method = :resend
-  config.action_mailer.resend_settings = {
-    api_key: ENV.fetch("RESEND_API_KEY")
-  }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default_url_options = { host: ENV.fetch("APP_HOST", "questionary-wro3.onrender.com") }
