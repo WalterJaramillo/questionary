@@ -45,6 +45,7 @@ class QuizController < ApplicationController
 
     @page = [params[:page].to_i, 1].max
     @total_pages = TOTAL_PAGES
+    @questions_per_page = QUESTIONS_PER_PAGE
 
     start_idx = (@page - 1) * QUESTIONS_PER_PAGE
     page_ids = session[:question_ids][start_idx, QUESTIONS_PER_PAGE]
