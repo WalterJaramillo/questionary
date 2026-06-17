@@ -107,13 +107,21 @@ class AttemptTest < ActiveSupport::TestCase
     assert_not_includes weak.map(&:first), "ECD"
   end
 
-  test "weak_topics returns empty when no topic has 2+ errors" do
+  test "weak_topics returns at least one topic even with single error" do
     student = students(:alice)
     attempt = student.attempts.create!(status: "in_progress", started_at: Time.current)
 
     q1 = Question.create!(item: 300, seccion: "B", tema: "Solo Error", question_text: "Q1", option_a: "A", option_b: "B", option_c: "C", option_d: "D", correct_answer: "a")
 
     attempt.answers.create!(question: q1, selected_option: "b", is_correct: false)
+
+    weak = attempt.weak_topics
+    assert_includes weak.map(&:first), "Solo Error"
+  end
+
+  test "weak_topics returns empty when score is perfect" do
+    student = students(:alice)
+    attempt = student.attempts.create!(status: "completed", started_at: Time.current, completed_at: Time.current, score: 30)
 
     assert_equal [], attempt.weak_topics
   end

@@ -47,11 +47,22 @@ class Attempt < ApplicationRecord
   end
 
   def weak_topics
-    answers.joins(:question)
+    return [] if score == total_questions
+
+    topics = answers.joins(:question)
       .where(is_correct: false)
       .group("questions.tema")
       .having("COUNT(*) >= 2")
       .order(Arel.sql("COUNT(*) DESC"))
+      .pluck(Arel.sql("questions.tema"), Arel.sql("COUNT(*)"))
+
+    return topics if topics.any?
+
+    answers.joins(:question)
+      .where(is_correct: false)
+      .group("questions.tema")
+      .order(Arel.sql("COUNT(*) DESC"))
+      .limit(1)
       .pluck(Arel.sql("questions.tema"), Arel.sql("COUNT(*)"))
   end
 end
