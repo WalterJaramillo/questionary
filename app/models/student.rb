@@ -3,11 +3,11 @@ class Student < ApplicationRecord
 
   ZONAS = {
     "Zona Meta" => [
-      "Piedemonte", "Provincia", "Nare", "Tibu",
-      "Neiva", "Putumayo", "Rubiales"
+      "CP9", "Castilla", "Chichimene", "Apiay"
     ],
     "Otras zonas" => [
-      "CP9", "Castilla", "Chichimene", "Apiay"
+      "Piedemonte", "Provincia", "Nare", "Tibu",
+      "Neiva", "Putumayo", "Rubiales"
     ]
   }.freeze
 
