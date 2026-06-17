@@ -6,7 +6,7 @@ services:
     plan: free
     branch: main
     buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec rails db:migrate && bundle exec rails db:seed && bundle exec rails server"
+    startCommand: "bundle exec rails db:migrate && bundle exec rails db:seed && bundle exec rake questions:import && bundle exec rails server"
     healthCheckPath: /up
     envVars:
       - key: DATABASE_URL
