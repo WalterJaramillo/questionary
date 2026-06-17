@@ -6,9 +6,9 @@ namespace :questions do
     excel_path = ENV.fetch("EXCEL_PATH", Rails.root.join("Evaluacion Tecnica preguntas 28-5-2026.xlsx").to_s)
 
     unless File.exist?(excel_path)
-      puts "ERROR: File not found: #{excel_path}"
-      puts "Usage: EXCEL_PATH=/path/to/file.xlsx rake questions:import"
-      exit 1
+      puts "WARNING: File not found: #{excel_path}"
+      puts "Skipping import. Run with EXCEL_PATH=/path/to/file.xlsx to import."
+      next
     end
 
     puts "Opening Excel file: #{excel_path}"
@@ -59,8 +59,6 @@ namespace :questions do
         next
       end
 
-      seccion = workbook.cell(row_num, col_map["SECCIÓN"] + 1).to_s.strip
-      tema = workbook.cell(row_num, col_map["TEMA"] + 1).to_s.strip
       question_text = workbook.cell(row_num, col_map["PREGUNTA"] + 1)
       option_a = workbook.cell(row_num, col_map["A"] + 1)
       option_b = workbook.cell(row_num, col_map["B"] + 1)
