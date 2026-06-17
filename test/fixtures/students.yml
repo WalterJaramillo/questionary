@@ -2,16 +2,19 @@ alice:
   cedula: "12345678"
   name: "Alice Test"
   email: "alice@test.com"
+  zona: "Piedemonte"
   attempts_count: 0
 
 bob:
   cedula: "87654321"
   name: "Bob Test"
   email: "bob@test.com"
+  zona: "Castilla"
   attempts_count: 2
 
 charlie:
   cedula: "11223344"
   name: "Charlie Test"
   email: "charlie@test.com"
+  zona: "Neiva"
   attempts_count: 1

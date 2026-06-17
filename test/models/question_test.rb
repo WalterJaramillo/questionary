@@ -7,6 +7,11 @@ class QuestionTest < ActiveSupport::TestCase
     assert_equal 30, questions.map(&:id).uniq.count
   end
 
+  test "random_sample covers multiple sections proportionally" do
+    sections_in_sample = Question.random_sample.pluck(:seccion).uniq
+    assert sections_in_sample.size >= 3, "Expected at least 3 sections in sample, got #{sections_in_sample.size}"
+  end
+
   test "validates presence of required fields" do
     question = Question.new
     assert_not question.valid?
@@ -31,6 +36,8 @@ class QuestionTest < ActiveSupport::TestCase
   test "validates item uniqueness" do
     Question.create!(
       item: 100,
+      seccion: "Test",
+      tema: "Test",
       question_text: "Test",
       option_a: "A",
       option_b: "B",
@@ -40,6 +47,8 @@ class QuestionTest < ActiveSupport::TestCase
     )
     duplicate = Question.new(
       item: 100,
+      seccion: "Test",
+      tema: "Test",
       question_text: "Test 2",
       option_a: "A",
       option_b: "B",

@@ -1,4 +1,6 @@
 class Attempt < ApplicationRecord
+  TIME_LIMIT = 20.minutes
+
   belongs_to :student
   has_many :answers, dependent: :destroy
 
@@ -28,5 +30,28 @@ class Attempt < ApplicationRecord
 
   def completed?
     status == "completed"
+  end
+
+  def expired?
+    time_remaining <= 0
+  end
+
+  def time_remaining
+    [ (started_at + TIME_LIMIT - Time.current).to_i, 0 ].max
+  end
+
+  def time_remaining_formatted
+    mins = time_remaining / 60
+    secs = time_remaining % 60
+    "#{mins}:#{secs.to_s.rjust(2, '0')}"
+  end
+
+  def weak_topics
+    answers.joins(:question)
+      .where(is_correct: false)
+      .group("questions.tema")
+      .having("COUNT(*) >= 2")
+      .order(Arel.sql("COUNT(*) DESC"))
+      .pluck(Arel.sql("questions.tema"), Arel.sql("COUNT(*)"))
   end
 end

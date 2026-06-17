@@ -26,6 +26,7 @@
         <table>
           <tr><td>Nombre</td><td><%= @student.name %></td></tr>
           <tr><td>Cédula</td><td><%= @student.cedula %></td></tr>
+          <tr><td>Zona</td><td><%= @student.zona %></td></tr>
           <tr><td>Correo</td><td><%= @student.email %></td></tr>
           <tr><td>Intento</td><td><%= @student.attempts_count %> de <%= Student::MAX_ATTEMPTS %></td></tr>
           <tr><td>Fecha</td><td><%= @attempt.completed_at.strftime("%d/%m/%Y %H:%M") %></td></tr>

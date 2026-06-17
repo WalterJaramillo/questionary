@@ -52,4 +52,69 @@ class AttemptTest < ActiveSupport::TestCase
     assert_not in_progress.completed?
     assert completed.completed?
   end
+
+  test "expired? returns false when time remaining" do
+    student = students(:alice)
+    attempt = student.attempts.create!(status: "in_progress", started_at: Time.current)
+
+    assert_not attempt.expired?
+  end
+
+  test "expired? returns true after time limit" do
+    student = students(:alice)
+    attempt = student.attempts.create!(status: "in_progress", started_at: 25.minutes.ago)
+
+    assert attempt.expired?
+  end
+
+  test "time_remaining calculates seconds correctly" do
+    student = students(:alice)
+    attempt = student.attempts.create!(status: "in_progress", started_at: 10.minutes.ago)
+
+    remaining = attempt.time_remaining
+    assert_in_delta 600, remaining, 2
+  end
+
+  test "time_remaining returns 0 when expired" do
+    student = students(:alice)
+    attempt = student.attempts.create!(status: "in_progress", started_at: 25.minutes.ago)
+
+    assert_equal 0, attempt.time_remaining
+  end
+
+  test "time_remaining_formatted returns MM:SS format" do
+    student = students(:alice)
+    attempt = student.attempts.create!(status: "in_progress", started_at: Time.current)
+
+    formatted = attempt.time_remaining_formatted
+    assert_match /\d+:\d{2}/, formatted
+  end
+
+  test "weak_topics returns topics with 2 or more errors" do
+    student = students(:alice)
+    attempt = student.attempts.create!(status: "in_progress", started_at: Time.current)
+
+    q1 = Question.create!(item: 200, seccion: "A", tema: "MAASP", question_text: "Q1", option_a: "A", option_b: "B", option_c: "C", option_d: "D", correct_answer: "a")
+    q2 = Question.create!(item: 201, seccion: "A", tema: "MAASP", question_text: "Q2", option_a: "A", option_b: "B", option_c: "C", option_d: "D", correct_answer: "a")
+    q3 = Question.create!(item: 202, seccion: "A", tema: "ECD", question_text: "Q3", option_a: "A", option_b: "B", option_c: "C", option_d: "D", correct_answer: "a")
+
+    attempt.answers.create!(question: q1, selected_option: "b", is_correct: false)
+    attempt.answers.create!(question: q2, selected_option: "b", is_correct: false)
+    attempt.answers.create!(question: q3, selected_option: "b", is_correct: false)
+
+    weak = attempt.weak_topics
+    assert_includes weak.map(&:first), "MAASP"
+    assert_not_includes weak.map(&:first), "ECD"
+  end
+
+  test "weak_topics returns empty when no topic has 2+ errors" do
+    student = students(:alice)
+    attempt = student.attempts.create!(status: "in_progress", started_at: Time.current)
+
+    q1 = Question.create!(item: 300, seccion: "B", tema: "Solo Error", question_text: "Q1", option_a: "A", option_b: "B", option_c: "C", option_d: "D", correct_answer: "a")
+
+    attempt.answers.create!(question: q1, selected_option: "b", is_correct: false)
+
+    assert_equal [], attempt.weak_topics
+  end
 end

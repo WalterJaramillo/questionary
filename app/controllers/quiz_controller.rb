@@ -9,8 +9,9 @@ class QuizController < ApplicationController
     cedula = params[:cedula].to_s.strip
     name = params[:name].to_s.strip
     email = params[:email].to_s.strip
+    zona = params[:zona].to_s.strip
 
-    if cedula.blank? || name.blank? || email.blank?
+    if cedula.blank? || name.blank? || email.blank? || zona.blank?
       flash[:alert] = "Todos los campos son obligatorios"
       redirect_to root_path and return
     end
@@ -18,6 +19,7 @@ class QuizController < ApplicationController
     student = Student.find_or_create_by(cedula: cedula) do |s|
       s.name = name
       s.email = email
+      s.zona = zona
     end
 
     unless student.can_take_quiz?
@@ -43,14 +45,31 @@ class QuizController < ApplicationController
       redirect_to root_path, alert: "No hay un intento activo" and return
     end
 
-    @page = [params[:page].to_i, 1].max
-    @total_pages = TOTAL_PAGES
-    @questions_per_page = QUESTIONS_PER_PAGE
+    if attempt.expired?
+      redirect_to submit_quiz_path(auto_submit: true) and return
+    end
 
-    start_idx = (@page - 1) * QUESTIONS_PER_PAGE
-    page_ids = session[:question_ids][start_idx, QUESTIONS_PER_PAGE]
-    @questions = Question.where(id: page_ids).to_a
-    @questions.sort_by! { |q| session[:question_ids].index(q.id) }
+    @time_remaining = attempt.time_remaining
+    @time_remaining_formatted = attempt.time_remaining_formatted
+    @show_all_questions = @time_remaining < 300
+
+    if @show_all_questions
+      @page = 1
+      @total_pages = 1
+      @questions_per_page = 30
+      @questions = Question.where(id: session[:question_ids]).to_a
+      @questions.sort_by! { |q| session[:question_ids].index(q.id) }
+    else
+      @page = [ params[:page].to_i, 1 ].max
+      @total_pages = TOTAL_PAGES
+      @questions_per_page = QUESTIONS_PER_PAGE
+
+      start_idx = (@page - 1) * QUESTIONS_PER_PAGE
+      page_ids = session[:question_ids][start_idx, QUESTIONS_PER_PAGE]
+      @questions = Question.where(id: page_ids).to_a
+      @questions.sort_by! { |q| session[:question_ids].index(q.id) }
+    end
+
     @attempt = attempt
     @answered = session[:answers] || {}
   end
@@ -73,23 +92,30 @@ class QuizController < ApplicationController
     session[:answers] ||= {}
     session[:answers].merge!(answers_hash)
 
-    total_answered = session[:answers].size
-    next_page = params[:next_page].to_i
+    auto_submit = params[:auto_submit] == "true"
+    is_expired = attempt.expired?
 
-    if next_page > 0 && next_page <= TOTAL_PAGES
-      current_page = [params[:page].to_i, 1].max
-      start_idx = (current_page - 1) * QUESTIONS_PER_PAGE
-      page_ids = session[:question_ids][start_idx, QUESTIONS_PER_PAGE].map(&:to_s)
-      unanswered = page_ids.reject { |id| session[:answers][id].present? }
+    if !auto_submit && !is_expired
+      next_page = params[:next_page].to_i
 
-      if unanswered.any?
-        flash[:alert] = "Debes responder todas las preguntas de esta página antes de continuar"
-        redirect_to quiz_path(page: current_page) and return
+      if next_page > 0 && next_page <= TOTAL_PAGES
+        current_page = [ params[:page].to_i, 1 ].max
+        start_idx = (current_page - 1) * QUESTIONS_PER_PAGE
+        page_ids = session[:question_ids][start_idx, QUESTIONS_PER_PAGE].map(&:to_s)
+        unanswered = page_ids.reject { |id| session[:answers][id].present? }
+
+        if unanswered.any?
+          flash[:alert] = "Debes responder todas las preguntas de esta página antes de continuar"
+          redirect_to quiz_path(page: current_page) and return
+        end
+
+        redirect_to quiz_path(page: next_page) and return
       end
-    end
 
-    if total_answered < 30
-      redirect_to quiz_path(page: next_page) and return
+      if session[:answers].size < 30
+        flash[:alert] = "Debes responder todas las preguntas antes de enviar"
+        redirect_to quiz_path and return
+      end
     end
 
     begin
@@ -124,6 +150,7 @@ class QuizController < ApplicationController
     end
 
     @student = @attempt.student
+    @weak_topics = @attempt.weak_topics
   end
 
   private

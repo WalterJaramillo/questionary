@@ -1,6 +1,10 @@
+<% sections = ["Well control", "Integridad del equipo", "Control de trabajo", "Intervención a pozo", "Aceptación técnica", "Stuck pipe", "Diagnóstico de influjo"] %>
+<% topics = ["Cálculo de presión", "MAASP", "ECD", "Evaluación de equipos", "Gestión de riesgos", "Normativa", "Prevención de pegadura"] %>
 <% (1..35).each do |i| %>
 question_<%= i %>:
   item: <%= i %>
+  seccion: "<%= sections[i % 7] %>"
+  tema: "<%= topics[i % 7] %>"
   question_text: "Test question number <%= i %>"
   option_a: "Option A for question <%= i %>"
   option_b: "Option B for question <%= i %>"

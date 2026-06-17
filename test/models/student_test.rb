@@ -6,15 +6,8 @@ class StudentTest < ActiveSupport::TestCase
     assert student.can_take_quiz?
   end
 
-  test "can_take_quiz? returns true with 1 attempt" do
-    student = students(:charlie)
-    assert_equal 1, student.attempts_count
-    assert student.can_take_quiz?
-  end
-
-  test "can_take_quiz? returns false with 2 attempts" do
-    student = students(:bob)
-    assert_equal 2, student.attempts_count
+  test "can_take_quiz? returns false with 1 attempt" do
+    student = Student.create!(cedula: "99999", name: "Test", email: "test@test.com", zona: "Piedemonte", attempts_count: 1)
     assert_not student.can_take_quiz?
   end
 
@@ -24,6 +17,18 @@ class StudentTest < ActiveSupport::TestCase
     assert_includes student.errors[:cedula], "can't be blank"
     assert_includes student.errors[:name], "can't be blank"
     assert_includes student.errors[:email], "can't be blank"
+    assert_includes student.errors[:zona], "can't be blank"
+  end
+
+  test "validates zona is a valid option" do
+    student = Student.new(
+      cedula: "new_cedula",
+      name: "New",
+      email: "new@test.com",
+      zona: "Invalid Zona"
+    )
+    assert_not student.valid?
+    assert_includes student.errors[:zona], "no es válida"
   end
 
   test "validates cedula uniqueness" do

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_30_193155) do
+ActiveRecord::Schema[8.1].define(version: 2026_06_17_004722) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -47,6 +47,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_30_193155) do
     t.text "option_c", null: false
     t.text "option_d", null: false
     t.text "question_text", null: false
+    t.string "seccion"
+    t.string "tema"
     t.datetime "updated_at", null: false
     t.index ["item"], name: "index_questions_on_item", unique: true
   end
@@ -58,6 +60,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_30_193155) do
     t.string "email", null: false
     t.string "name", null: false
     t.datetime "updated_at", null: false
+    t.string "zona", default: "", null: false
     t.index ["cedula"], name: "index_students_on_cedula", unique: true
   end
 

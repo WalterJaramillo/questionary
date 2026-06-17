@@ -12,7 +12,7 @@ questions_data = [
     option_b: "5,200 psi",
     option_c: "5,408 psi",
     option_d: "6,000 psi",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 2,
@@ -21,7 +21,7 @@ questions_data = [
     option_b: "600 psi",
     option_c: "800 psi",
     option_d: "1,000 psi",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 3,
@@ -30,7 +30,7 @@ questions_data = [
     option_b: "10.96 ppg",
     option_c: "11.2 ppg",
     option_d: "12 ppg",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 4,
@@ -39,7 +39,7 @@ questions_data = [
     option_b: "1,000 psi",
     option_c: "1,400 psi",
     option_d: "1,800 psi",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 5,
@@ -48,7 +48,7 @@ questions_data = [
     option_b: "10 bbl",
     option_c: "15 bbl",
     option_d: "20 bbl",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 6,
@@ -57,7 +57,7 @@ questions_data = [
     option_b: "800 psi",
     option_c: "900 psi",
     option_d: "1,000 psi",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 7,
@@ -66,7 +66,7 @@ questions_data = [
     option_b: "5,400 psi",
     option_c: "5,600 psi",
     option_d: "5,800 psi",
-    correct_answer: "d",
+    correct_answer: "d"
   },
   {
     item: 8,
@@ -75,7 +75,7 @@ questions_data = [
     option_b: "0.56 psi/ft",
     option_c: "0.60 psi/ft",
     option_d: "0.65 psi/ft",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 9,
@@ -84,7 +84,7 @@ questions_data = [
     option_b: "10.6 ppg",
     option_c: "11 ppg",
     option_d: "12 ppg",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 10,
@@ -93,7 +93,7 @@ questions_data = [
     option_b: "15 min",
     option_c: "20 min",
     option_d: "25 min",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 11,
@@ -102,7 +102,7 @@ questions_data = [
     option_b: "Migración de gas",
     option_c: "Influjo de agua",
     option_d: "Error de cálculo",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 12,
@@ -111,7 +111,7 @@ questions_data = [
     option_b: "Agua",
     option_c: "Petróleo",
     option_d: "No hay influjo",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 13,
@@ -120,7 +120,7 @@ questions_data = [
     option_b: "Aplicar método volumétrico",
     option_c: "Abrir el pozo",
     option_d: "Ignorar presión",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 14,
@@ -129,7 +129,7 @@ questions_data = [
     option_b: "Controlar flujo",
     option_c: "Sellar pozo",
     option_d: "Medir volumen",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 15,
@@ -138,7 +138,7 @@ questions_data = [
     option_b: "Presión tubería",
     option_c: "Caudal",
     option_d: "Densidad",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 16,
@@ -147,7 +147,7 @@ questions_data = [
     option_b: "Blowout",
     option_c: "Pérdida de circulación",
     option_d: "Ninguno",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 17,
@@ -156,7 +156,7 @@ questions_data = [
     option_b: "Error de medición",
     option_c: "Presión estable",
     option_d: "Pérdida de lodo",
-    correct_answer: "a",
+    correct_answer: "a"
   },
   {
     item: 18,
@@ -165,7 +165,7 @@ questions_data = [
     option_b: "Presión máxima admisible en superficie",
     option_c: "Presión de bomba",
     option_d: "Presión de formación",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 19,
@@ -174,7 +174,7 @@ questions_data = [
     option_b: "2",
     option_c: "3",
     option_d: "Ninguna",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 20,
@@ -183,7 +183,7 @@ questions_data = [
     option_b: "Árbol",
     option_c: "Columna de fluido",
     option_d: "Choke",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 21,
@@ -192,7 +192,7 @@ questions_data = [
     option_b: "Se inicia operación",
     option_c: "No se acepta el equipo",
     option_d: "Se reporta después",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 22,
@@ -201,7 +201,7 @@ questions_data = [
     option_b: "Ecopetrol",
     option_c: "Dueño del equipo",
     option_d: "HSE",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 23,
@@ -210,7 +210,7 @@ questions_data = [
     option_b: "Aseguramiento técnico",
     option_c: "Costos",
     option_d: "Planeación",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 24,
@@ -219,7 +219,7 @@ questions_data = [
     option_b: "Solo si hay presión",
     option_c: "No",
     option_d: "Depende",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 25,
@@ -228,7 +228,7 @@ questions_data = [
     option_b: "Antes de iniciar operaciones",
     option_c: "Durante falla",
     option_d: "Nunca",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 26,
@@ -237,7 +237,7 @@ questions_data = [
     option_b: "Presión diferencial",
     option_c: "Vibración",
     option_d: "Peso",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 27,
@@ -246,7 +246,7 @@ questions_data = [
     option_b: "Reducción presión",
     option_c: "Flujo estable",
     option_d: "Ninguno",
-    correct_answer: "a",
+    correct_answer: "a"
   },
   {
     item: 28,
@@ -255,7 +255,7 @@ questions_data = [
     option_b: "Aplicar jar",
     option_c: "Evaluar causa",
     option_d: "Cortar tubería",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 29,
@@ -264,7 +264,7 @@ questions_data = [
     option_b: "Detener operación",
     option_c: "Delegar",
     option_d: "Ignorar",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 30,
@@ -273,7 +273,7 @@ questions_data = [
     option_b: "Solo Ecopetrol",
     option_c: "Cualquier persona",
     option_d: "HSE",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 31,
@@ -282,7 +282,7 @@ questions_data = [
     option_b: "14 días",
     option_c: "21 días",
     option_d: "30 días",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 32,
@@ -291,7 +291,7 @@ questions_data = [
     option_b: "Supervisor",
     option_c: "Ecopetrol",
     option_d: "Operador",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 33,
@@ -300,7 +300,7 @@ questions_data = [
     option_b: "Operaciones simultáneas con riesgo",
     option_c: "Sin riesgo",
     option_d: "Trabajo aislado",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 34,
@@ -309,7 +309,7 @@ questions_data = [
     option_b: "Aseguramiento técnico",
     option_c: "No planeación",
     option_d: "Menor control",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 35,
@@ -318,7 +318,7 @@ questions_data = [
     option_b: "Mantener, restaurar o mejorar el pozo",
     option_c: "Reducir costos",
     option_d: "Cambiar equipo",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 36,
@@ -327,7 +327,7 @@ questions_data = [
     option_b: "Fluidos en formación",
     option_c: "Temperatura ambiente",
     option_d: "Iluminación",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 37,
@@ -336,7 +336,7 @@ questions_data = [
     option_b: "No requiere aseguramiento técnico",
     option_c: "Mayor complejidad y aseguramiento técnico",
     option_d: "No requiere planeación",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 38,
@@ -345,7 +345,7 @@ questions_data = [
     option_b: "14 días",
     option_c: "21 días",
     option_d: "30 días",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 39,
@@ -354,7 +354,7 @@ questions_data = [
     option_b: "2 (una activa y una contingente)",
     option_c: "3",
     option_d: "Ninguna",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 40,
@@ -363,7 +363,7 @@ questions_data = [
     option_b: "Árbol",
     option_c: "Columna de fluido",
     option_d: "Choke",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 41,
@@ -372,7 +372,7 @@ questions_data = [
     option_b: "Ecopetrol",
     option_c: "Supervisor Integral (Company Man)",
     option_d: "Contratista",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 42,
@@ -381,7 +381,7 @@ questions_data = [
     option_b: "Depende",
     option_c: "No, se pierde control del pozo",
     option_d: "Solo con permiso",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 43,
@@ -390,7 +390,7 @@ questions_data = [
     option_b: "Asegurar integridad técnica y operativa",
     option_c: "Reducir costos",
     option_d: "Registrar producción",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 44,
@@ -399,7 +399,7 @@ questions_data = [
     option_b: "Ecopetrol",
     option_c: "Dueño del equipo",
     option_d: "HSE",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 45,
@@ -408,7 +408,7 @@ questions_data = [
     option_b: "GOP-F-095",
     option_c: "RAP-F-006",
     option_d: "OpenWells",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 46,
@@ -417,7 +417,7 @@ questions_data = [
     option_b: "Solo menores",
     option_c: "No, si son impeditivos",
     option_d: "Depende del cliente",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 47,
@@ -426,7 +426,7 @@ questions_data = [
     option_b: "Influjo de gas",
     option_c: "Diferencia normal por fricción",
     option_d: "Error en medición",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 48,
@@ -435,7 +435,7 @@ questions_data = [
     option_b: "Mantener presión constante de casing",
     option_c: "Mantener presión constante en tubería",
     option_d: "Eliminar necesidad de choke",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 49,
@@ -444,7 +444,7 @@ questions_data = [
     option_b: "Presión diferencial entre formación y pozo",
     option_c: "Vibración",
     option_d: "Flujo turbulento",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 50,
@@ -453,7 +453,7 @@ questions_data = [
     option_b: "Mantener circulación constante",
     option_c: "Parar operación frecuentemente",
     option_d: "Reducir velocidad de viaje",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 51,
@@ -462,7 +462,7 @@ questions_data = [
     option_b: "14 días",
     option_c: "21 días",
     option_d: "28 días",
-    correct_answer: "d",
+    correct_answer: "d"
   },
   {
     item: 52,
@@ -471,7 +471,7 @@ questions_data = [
     option_b: "Operador del equipo",
     option_c: "Ecopetrol",
     option_d: "HSE",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 53,
@@ -480,7 +480,7 @@ questions_data = [
     option_b: "Blind ram",
     option_c: "Anular",
     option_d: "Shear ram",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 54,
@@ -489,7 +489,7 @@ questions_data = [
     option_b: "Controlar flujo del influjo",
     option_c: "Sellar el pozo",
     option_d: "Medir volumen",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 55,
@@ -498,7 +498,7 @@ questions_data = [
     option_b: "Equipos de superficie",
     option_c: "Cementación",
     option_d: "Logging",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 56,
@@ -507,7 +507,7 @@ questions_data = [
     option_b: "Supervisar cumplimiento del well plan",
     option_c: "Firmar sin verificar",
     option_d: "Ejecutar mantenimiento",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 57,
@@ -516,7 +516,7 @@ questions_data = [
     option_b: "Garantizar ejecución rápida",
     option_c: "Gestionar riesgos y ejecutar actividades sin afectaciones",
     option_d: "Aumentar producción",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 58,
@@ -525,7 +525,7 @@ questions_data = [
     option_b: "Definición de recursos",
     option_c: "Ejecución del trabajo",
     option_d: "Definición de secuencia",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 59,
@@ -534,7 +534,7 @@ questions_data = [
     option_b: "Identificar peligros y controles",
     option_c: "Firmar permisos sin revisión",
     option_d: "Delegar responsabilidades",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 60,
@@ -543,7 +543,7 @@ questions_data = [
     option_b: "No",
     option_c: "Solo actividades operacionales no lo requieren",
     option_d: "Solo mantenimiento",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 61,
@@ -552,7 +552,7 @@ questions_data = [
     option_b: "Autoridad Ejecutante",
     option_c: "Operador",
     option_d: "HSE",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 62,
@@ -561,7 +561,7 @@ questions_data = [
     option_b: "Realizar inspecciones y seguimiento",
     option_c: "Solo registrar información",
     option_d: "Delegar responsabilidad",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 63,
@@ -570,7 +570,7 @@ questions_data = [
     option_b: "Solo Ecopetrol",
     option_c: "Cualquier persona involucrada",
     option_d: "Solo HSE",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 64,
@@ -579,7 +579,7 @@ questions_data = [
     option_b: "Ignorarse",
     option_c: "Comunicarse e incorporarse",
     option_d: "Solo reportarse",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 65,
@@ -588,7 +588,7 @@ questions_data = [
     option_b: "Disponibilidad de documentos y análisis de riesgos",
     option_c: "Solo permisos",
     option_d: "Solo personal",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 66,
@@ -597,7 +597,7 @@ questions_data = [
     option_b: "AA",
     option_c: "AAL",
     option_d: "Supervisor",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 67,
@@ -606,7 +606,7 @@ questions_data = [
     option_b: "Autorizar trabajos",
     option_c: "Transportar equipos",
     option_d: "Realizar mantenimiento",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 68,
@@ -615,7 +615,7 @@ questions_data = [
     option_b: "Esperar",
     option_c: "Detener la operación",
     option_d: "Reportar después",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 69,
@@ -624,7 +624,7 @@ questions_data = [
     option_b: "Ignorar",
     option_c: "Evaluar riesgos e implementar controles",
     option_d: "Suspender todo",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 70,
@@ -633,7 +633,7 @@ questions_data = [
     option_b: "Aceptar y verificar condiciones del equipo",
     option_c: "Registrar producción",
     option_d: "Medir presión",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 71,
@@ -642,7 +642,7 @@ questions_data = [
     option_b: "Ecopetrol",
     option_c: "Contratista dueño del equipo",
     option_d: "HSE",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 72,
@@ -651,7 +651,7 @@ questions_data = [
     option_b: "Iniciar operación",
     option_c: "Detener aceptación del equipo",
     option_d: "Reportar después",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 73,
@@ -660,7 +660,7 @@ questions_data = [
     option_b: "Responsabilidad del operador del equipo",
     option_c: "Responsabilidad compartida",
     option_d: "No hay responsabilidad",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 74,
@@ -669,7 +669,7 @@ questions_data = [
     option_b: "Aseguramiento y verificación",
     option_c: "Producción",
     option_d: "Costos",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 75,
@@ -678,7 +678,7 @@ questions_data = [
     option_b: "Mantener, restaurar o mejorar el pozo",
     option_c: "Reducir costos",
     option_d: "Cambiar equipo",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 76,
@@ -687,7 +687,7 @@ questions_data = [
     option_b: "Fluidos en formación",
     option_c: "Temperatura ambiente",
     option_d: "Iluminación",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 77,
@@ -696,7 +696,7 @@ questions_data = [
     option_b: "No requiere aseguramiento técnico",
     option_c: "Mayor complejidad y aseguramiento técnico",
     option_d: "No requiere planeación",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 78,
@@ -705,7 +705,7 @@ questions_data = [
     option_b: "5,198 psi",
     option_c: "5,400 psi",
     option_d: "5,900 psi",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 79,
@@ -714,7 +714,7 @@ questions_data = [
     option_b: "11.46 ppg",
     option_c: "11.2 ppg",
     option_d: "11.5 ppg",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 80,
@@ -723,7 +723,7 @@ questions_data = [
     option_b: "5,100 psi",
     option_c: "5,300 psi",
     option_d: "5,600 psi",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 81,
@@ -732,7 +732,7 @@ questions_data = [
     option_b: "1,000 psi",
     option_c: "1,200 psi",
     option_d: "1,400 psi",
-    correct_answer: "d",
+    correct_answer: "d"
   },
   {
     item: 82,
@@ -741,7 +741,7 @@ questions_data = [
     option_b: "10.5 ppg",
     option_c: "10.6 ppg",
     option_d: "11 ppg",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 83,
@@ -750,7 +750,7 @@ questions_data = [
     option_b: "7.5 bbl",
     option_c: "10 bbl",
     option_d: "12 bbl",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 84,
@@ -759,7 +759,7 @@ questions_data = [
     option_b: "700 psi",
     option_c: "800 psi",
     option_d: "900 psi",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 85,
@@ -768,7 +768,7 @@ questions_data = [
     option_b: "4,500 psi",
     option_c: "4,586 psi",
     option_d: "5,000 psi",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 86,
@@ -777,7 +777,7 @@ questions_data = [
     option_b: "5,400 psi",
     option_c: "5,650 psi",
     option_d: "6,000 psi",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 87,
@@ -786,7 +786,7 @@ questions_data = [
     option_b: "1,200 psi",
     option_c: "1,380 psi",
     option_d: "1,800 psi",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 88,
@@ -795,7 +795,7 @@ questions_data = [
     option_b: "6,006 psi",
     option_c: "6,300 psi",
     option_d: "6,800 psi",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 89,
@@ -804,7 +804,7 @@ questions_data = [
     option_b: "10.96",
     option_c: "11.15",
     option_d: "11.5",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 90,
@@ -813,7 +813,7 @@ questions_data = [
     option_b: "10 bbl",
     option_c: "12 bbl",
     option_d: "15 bbl",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 91,
@@ -822,7 +822,7 @@ questions_data = [
     option_b: "5,187 psi",
     option_c: "5,500 psi",
     option_d: "6,000 psi",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 92,
@@ -831,7 +831,7 @@ questions_data = [
     option_b: "10.6",
     option_c: "10.8",
     option_d: "11",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 93,
@@ -840,7 +840,7 @@ questions_data = [
     option_b: "5,350",
     option_c: "5,550",
     option_d: "5,700",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 94,
@@ -849,7 +849,7 @@ questions_data = [
     option_b: "1,100",
     option_c: "1,330",
     option_d: "1,500",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 95,
@@ -858,7 +858,7 @@ questions_data = [
     option_b: "5,434",
     option_c: "5,800",
     option_d: "6,200",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 96,
@@ -867,7 +867,7 @@ questions_data = [
     option_b: "10.96",
     option_c: "11.1",
     option_d: "11.5",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 97,
@@ -876,7 +876,7 @@ questions_data = [
     option_b: "10",
     option_c: "12",
     option_d: "15",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 98,
@@ -885,7 +885,7 @@ questions_data = [
     option_b: "2",
     option_c: "3",
     option_d: "Ninguna",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 99,
@@ -894,7 +894,7 @@ questions_data = [
     option_b: "Árbol de navidad",
     option_c: "Columna hidrostática",
     option_d: "Choke",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 100,
@@ -903,7 +903,7 @@ questions_data = [
     option_b: "Durante operación",
     option_c: "Antes de iniciar operación",
     option_d: "Al finalizar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 101,
@@ -912,7 +912,7 @@ questions_data = [
     option_b: "Registrar",
     option_c: "No iniciar operación",
     option_d: "Delegar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 102,
@@ -921,7 +921,7 @@ questions_data = [
     option_b: "Ajustar en campo",
     option_c: "Detener trabajo",
     option_d: "Delegar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 103,
@@ -930,7 +930,7 @@ questions_data = [
     option_b: "HSE",
     option_c: "Cualquier persona",
     option_d: "Operador",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 104,
@@ -939,7 +939,7 @@ questions_data = [
     option_b: "14 días",
     option_c: "21 días",
     option_d: "30 días",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 105,
@@ -948,7 +948,7 @@ questions_data = [
     option_b: "Sin supervisión",
     option_c: "Mayor aseguramiento técnico",
     option_d: "No requiere planeación",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 106,
@@ -957,7 +957,7 @@ questions_data = [
     option_b: "Supervisor integral",
     option_c: "Operador",
     option_d: "Contratista",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 107,
@@ -966,7 +966,7 @@ questions_data = [
     option_b: "Registrar",
     option_c: "Detener operación",
     option_d: "Delegar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 108,
@@ -975,7 +975,7 @@ questions_data = [
     option_b: "Ecopetrol",
     option_c: "Dueño del equipo",
     option_d: "HSE",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 109,
@@ -984,7 +984,7 @@ questions_data = [
     option_b: "Solo temporal",
     option_c: "No",
     option_d: "Depende",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 110,
@@ -993,7 +993,7 @@ questions_data = [
     option_b: "Coordinación de riesgos",
     option_c: "Velocidad",
     option_d: "Costos",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 111,
@@ -1002,7 +1002,7 @@ questions_data = [
     option_b: "Ejecutarse sin riesgos",
     option_c: "Ejecutarse con control de riesgos",
     option_d: "Delegarse",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 112,
@@ -1011,7 +1011,7 @@ questions_data = [
     option_b: "Mejorar o restaurar el pozo",
     option_c: "Cambiar equipo",
     option_d: "Incrementar personal",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 113,
@@ -1020,7 +1020,7 @@ questions_data = [
     option_b: "Registrar",
     option_c: "No aceptar",
     option_d: "Delegar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 114,
@@ -1029,7 +1029,7 @@ questions_data = [
     option_b: "AA",
     option_c: "AAL",
     option_d: "HSE",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 115,
@@ -1038,7 +1038,7 @@ questions_data = [
     option_b: "Riesgo crítico",
     option_c: "Sin impacto",
     option_d: "Registro",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 116,
@@ -1047,7 +1047,7 @@ questions_data = [
     option_b: "Supervisar y asegurar cumplimiento",
     option_c: "Operar equipos",
     option_d: "Transportar",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 117,
@@ -1056,7 +1056,7 @@ questions_data = [
     option_b: "Se continúa",
     option_c: "Se genera desviación contractual",
     option_d: "Se delega",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 118,
@@ -1065,7 +1065,7 @@ questions_data = [
     option_b: "Aumentar producción",
     option_c: "Gestionar riesgos en la ejecución de actividades",
     option_d: "Mejorar tiempos",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 119,
@@ -1074,7 +1074,7 @@ questions_data = [
     option_b: "Planeación, ejecución, control y mejora",
     option_c: "Costos",
     option_d: "Logística",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 120,
@@ -1083,7 +1083,7 @@ questions_data = [
     option_b: "Delegar",
     option_c: "Identificar peligros y controles",
     option_d: "Registrar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 121,
@@ -1092,7 +1092,7 @@ questions_data = [
     option_b: "Se ajusta en campo",
     option_c: "Se detiene el trabajo",
     option_d: "Se delega",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 122,
@@ -1101,7 +1101,7 @@ questions_data = [
     option_b: "Informativo",
     option_c: "Obligatorio para actividades no rutinarias",
     option_d: "Solo administrativo",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 123,
@@ -1110,7 +1110,7 @@ questions_data = [
     option_b: "AAL",
     option_c: "AE",
     option_d: "HSE",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 124,
@@ -1119,7 +1119,7 @@ questions_data = [
     option_b: "AA",
     option_c: "AAL",
     option_d: "Supervisor",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 125,
@@ -1128,7 +1128,7 @@ questions_data = [
     option_b: "Monitorear condiciones",
     option_c: "Delegar",
     option_d: "Registrar al final",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 126,
@@ -1137,7 +1137,7 @@ questions_data = [
     option_b: "Ajustar después",
     option_c: "Reevaluar riesgos",
     option_d: "Delegar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 127,
@@ -1146,7 +1146,7 @@ questions_data = [
     option_b: "HSE",
     option_c: "Cualquier persona",
     option_d: "Operador",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 128,
@@ -1155,7 +1155,7 @@ questions_data = [
     option_b: "Ignorarse",
     option_c: "Aplicarse en campo",
     option_d: "Delegarse",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 129,
@@ -1164,7 +1164,7 @@ questions_data = [
     option_b: "Solo producción",
     option_c: "Todas las actividades",
     option_d: "Solo perforación",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 130,
@@ -1173,7 +1173,7 @@ questions_data = [
     option_b: "Vigente",
     option_c: "Archivado",
     option_d: "Firmado después",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 131,
@@ -1182,7 +1182,7 @@ questions_data = [
     option_b: "Coordinar actividades simultáneas",
     option_c: "Reducir personal",
     option_d: "Acelerar trabajo",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 132,
@@ -1191,7 +1191,7 @@ questions_data = [
     option_b: "Reducir costos",
     option_c: "Controlar tiempos",
     option_d: "Aumentar velocidad",
-    correct_answer: "a",
+    correct_answer: "a"
   },
   {
     item: 133,
@@ -1200,7 +1200,7 @@ questions_data = [
     option_b: "Registrarse",
     option_c: "Corregirse",
     option_d: "Delegarse",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 134,
@@ -1209,7 +1209,7 @@ questions_data = [
     option_b: "Evaluación de resultados",
     option_c: "Archivo",
     option_d: "Firma",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 135,
@@ -1218,7 +1218,7 @@ questions_data = [
     option_b: "Crítica",
     option_c: "Administrativa",
     option_d: "Secundaria",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 136,
@@ -1227,7 +1227,7 @@ questions_data = [
     option_b: "Disciplina operativa",
     option_c: "Reducción de personal",
     option_d: "Costos",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 137,
@@ -1236,7 +1236,7 @@ questions_data = [
     option_b: "Se registra",
     option_c: "Se incrementa el riesgo",
     option_d: "Se delega",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 140,
@@ -1245,7 +1245,7 @@ questions_data = [
     option_b: "Establecer requisitos para sistemas de control de pozo",
     option_c: "Mejorar producción",
     option_d: "Controlar logística",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 141,
@@ -1254,7 +1254,7 @@ questions_data = [
     option_b: "Controlar presión del pozo",
     option_c: "Medir caudal",
     option_d: "Transportar fluidos",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 142,
@@ -1263,7 +1263,7 @@ questions_data = [
     option_b: "2",
     option_c: "3",
     option_d: "Ninguna",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 143,
@@ -1272,7 +1272,7 @@ questions_data = [
     option_b: "Almacenar energía hidráulica",
     option_c: "Controlar flujo",
     option_d: "Bombear lodo",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 144,
@@ -1281,7 +1281,7 @@ questions_data = [
     option_b: "Realizarse periódicamente",
     option_c: "Solo hacerse al final",
     option_d: "Delegarse",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 145,
@@ -1290,7 +1290,7 @@ questions_data = [
     option_b: "Controlar flujo y presión",
     option_c: "Medir volumen",
     option_d: "Bombear fluido",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 146,
@@ -1299,7 +1299,7 @@ questions_data = [
     option_b: "Inyección de fluido al pozo",
     option_c: "Medición",
     option_d: "Control eléctrico",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 147,
@@ -1308,7 +1308,7 @@ questions_data = [
     option_b: "Registrar",
     option_c: "No operar",
     option_d: "Delegar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 148,
@@ -1317,7 +1317,7 @@ questions_data = [
     option_b: "Inmediato",
     option_c: "Opcional",
     option_d: "Variable",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 150,
@@ -1326,7 +1326,7 @@ questions_data = [
     option_b: "Permitir operación remota",
     option_c: "Solo ser local",
     option_d: "No ser usado",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 151,
@@ -1335,7 +1335,7 @@ questions_data = [
     option_b: "Sellar el pozo",
     option_c: "Bombear fluido",
     option_d: "Controlar torque",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 152,
@@ -1344,7 +1344,7 @@ questions_data = [
     option_b: "Sellar alrededor de la tubería",
     option_c: "Medir volumen",
     option_d: "Bombear",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 153,
@@ -1353,7 +1353,7 @@ questions_data = [
     option_b: "Ajustar después",
     option_c: "No iniciar operación",
     option_d: "Delegar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 154,
@@ -1362,7 +1362,7 @@ questions_data = [
     option_b: "Automático y redundante",
     option_c: "Opcional",
     option_d: "Simple",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 155,
@@ -1371,7 +1371,7 @@ questions_data = [
     option_b: "Medir volumen",
     option_c: "Controlar flujo",
     option_d: "Bombear",
-    correct_answer: "a",
+    correct_answer: "a"
   },
   {
     item: 156,
@@ -1380,7 +1380,7 @@ questions_data = [
     option_b: "Producción",
     option_c: "Caudal",
     option_d: "Torque",
-    correct_answer: "a",
+    correct_answer: "a"
   },
   {
     item: 157,
@@ -1389,7 +1389,7 @@ questions_data = [
     option_b: "Solo al final",
     option_c: "Antes de operar",
     option_d: "Después de operar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 158,
@@ -1398,7 +1398,7 @@ questions_data = [
     option_b: "Usar sistema alterno",
     option_c: "Ignorar",
     option_d: "Registrar",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 159,
@@ -1407,7 +1407,7 @@ questions_data = [
     option_b: "Periódico",
     option_c: "Eventual",
     option_d: "Delegado",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 160,
@@ -1416,7 +1416,7 @@ questions_data = [
     option_b: "Ajustar después",
     option_c: "No operar",
     option_d: "Delegar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 161,
@@ -1425,7 +1425,7 @@ questions_data = [
     option_b: "Pegadura mecánica",
     option_c: "Influjo de gas",
     option_d: "Falla de bomba",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 162,
@@ -1434,7 +1434,7 @@ questions_data = [
     option_b: "La presión diferencial empuja la tubería contra la pared del pozo",
     option_c: "Hay vibración",
     option_d: "Hay bajo torque",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 163,
@@ -1443,7 +1443,7 @@ questions_data = [
     option_b: "Aumento de torque",
     option_c: "Baja presión",
     option_d: "Caudal estable",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 164,
@@ -1452,7 +1452,7 @@ questions_data = [
     option_b: "Aplicar jar inmediatamente",
     option_c: "Diagnosticar causa",
     option_d: "Cortar tubería",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 165,
@@ -1461,7 +1461,7 @@ questions_data = [
     option_b: "Baja presión",
     option_c: "Alta vibración",
     option_d: "Bajo torque",
-    correct_answer: "a",
+    correct_answer: "a"
   },
   {
     item: 166,
@@ -1470,7 +1470,7 @@ questions_data = [
     option_b: "Daño en tubería",
     option_c: "Mejor flujo",
     option_d: "Control del pozo",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 167,
@@ -1479,7 +1479,7 @@ questions_data = [
     option_b: "Monitorear torque y arrastre",
     option_c: "Reducir vigilancia",
     option_d: "Ignorar parámetros",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 168,
@@ -1488,7 +1488,7 @@ questions_data = [
     option_b: "Pérdida de circulación y riesgo de pegadura",
     option_c: "Flujo normal",
     option_d: "Error",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 169,
@@ -1497,7 +1497,7 @@ questions_data = [
     option_b: "Después de diagnóstico",
     option_c: "Siempre",
     option_d: "Nunca",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 170,
@@ -1506,7 +1506,7 @@ questions_data = [
     option_b: "Obstrucción física",
     option_c: "Caudal",
     option_d: "Flujo",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 171,
@@ -1515,7 +1515,7 @@ questions_data = [
     option_b: "Alto MW",
     option_c: "Bajo torque",
     option_d: "Alta velocidad",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 172,
@@ -1524,7 +1524,7 @@ questions_data = [
     option_b: "Riesgo de stuck pipe",
     option_c: "Flujo normal",
     option_d: "Baja presión",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 173,
@@ -1533,7 +1533,7 @@ questions_data = [
     option_b: "Evitar pegaduras",
     option_c: "Medición",
     option_d: "Caudal",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 174,
@@ -1542,7 +1542,7 @@ questions_data = [
     option_b: "Aumentar torque",
     option_c: "Evaluar condición",
     option_d: "Ignorar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 175,
@@ -1551,7 +1551,7 @@ questions_data = [
     option_b: "Detectar condiciones anormales",
     option_c: "Controlar flujo",
     option_d: "Bombear",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 176,
@@ -1560,7 +1560,7 @@ questions_data = [
     option_b: "Pegadura",
     option_c: "Producción",
     option_d: "Caudal",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 177,
@@ -1569,7 +1569,7 @@ questions_data = [
     option_b: "Generar pegadura",
     option_c: "Reducir torque",
     option_d: "Controlar presión",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 178,
@@ -1578,7 +1578,7 @@ questions_data = [
     option_b: "Reducir fricción",
     option_c: "Aumentar torque",
     option_d: "Controlar flujo",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 179,
@@ -1587,7 +1587,7 @@ questions_data = [
     option_b: "Torque, drag, lodo y condiciones del pozo",
     option_c: "Solo caudal",
     option_d: "Solo velocidad",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 180,
@@ -1596,7 +1596,7 @@ questions_data = [
     option_b: "Se pierde tiempo",
     option_c: "Puede generar pérdida de pozo",
     option_d: "Se ajusta",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 181,
@@ -1605,7 +1605,7 @@ questions_data = [
     option_b: "Registrar y operar",
     option_c: "No aceptar el equipo",
     option_d: "Delegar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 182,
@@ -1614,7 +1614,7 @@ questions_data = [
     option_b: "Energía suficiente para cerrar el BOP",
     option_c: "Caudal",
     option_d: "Velocidad",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 183,
@@ -1623,7 +1623,7 @@ questions_data = [
     option_b: "Registrar",
     option_c: "No iniciar operación",
     option_d: "Delegar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 184,
@@ -1632,7 +1632,7 @@ questions_data = [
     option_b: "Controlar presión y flujo",
     option_c: "Producir",
     option_d: "Transportar",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 185,
@@ -1641,7 +1641,7 @@ questions_data = [
     option_b: "Integridad estructural",
     option_c: "Flujo",
     option_d: "Caudal",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 186,
@@ -1650,7 +1650,7 @@ questions_data = [
     option_b: "Registrar",
     option_c: "No operar",
     option_d: "Delegar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 187,
@@ -1659,7 +1659,7 @@ questions_data = [
     option_b: "Estar operativo y probado",
     option_c: "Ignorarse",
     option_d: "Ajustarse después",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 188,
@@ -1668,7 +1668,7 @@ questions_data = [
     option_b: "Evaluar condición",
     option_c: "Ignorar",
     option_d: "Delegar",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 189,
@@ -1677,7 +1677,7 @@ questions_data = [
     option_b: "Energía estable para operación",
     option_c: "Presión",
     option_d: "Caudal",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 190,
@@ -1686,7 +1686,7 @@ questions_data = [
     option_b: "Normas de seguridad industrial",
     option_c: "Producción",
     option_d: "Caudal",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 191,
@@ -1695,7 +1695,7 @@ questions_data = [
     option_b: "Registrar",
     option_c: "No aceptar",
     option_d: "Delegar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 192,
@@ -1704,7 +1704,7 @@ questions_data = [
     option_b: "Garantizar circulación adecuada",
     option_c: "Producir",
     option_d: "Controlar torque",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 193,
@@ -1713,7 +1713,7 @@ questions_data = [
     option_b: "Registrar",
     option_c: "Corregir antes de operar",
     option_d: "Delegar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 194,
@@ -1722,7 +1722,7 @@ questions_data = [
     option_b: "Integridad estructural",
     option_c: "Caudal",
     option_d: "Flujo",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 195,
@@ -1731,7 +1731,7 @@ questions_data = [
     option_b: "Registrar",
     option_c: "No aceptar",
     option_d: "Delegar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 196,
@@ -1740,7 +1740,7 @@ questions_data = [
     option_b: "Certificados vigentes",
     option_c: "Registro",
     option_d: "Archivo",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 197,
@@ -1749,7 +1749,7 @@ questions_data = [
     option_b: "Registrar",
     option_c: "No aceptar",
     option_d: "Delegar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 198,
@@ -1758,7 +1758,7 @@ questions_data = [
     option_b: "Sistemas de seguridad operativos",
     option_c: "Caudal",
     option_d: "Torque",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 199,
@@ -1767,7 +1767,7 @@ questions_data = [
     option_b: "Registrar",
     option_c: "Corregir antes de operar",
     option_d: "Delegar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 200,
@@ -1776,7 +1776,7 @@ questions_data = [
     option_b: "Asegurar condiciones seguras del equipo",
     option_c: "Aumentar producción",
     option_d: "Medir",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 201,
@@ -1785,7 +1785,7 @@ questions_data = [
     option_b: "10.96 ppg",
     option_c: "11.2 ppg",
     option_d: "11.5 ppg",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 202,
@@ -1794,7 +1794,7 @@ questions_data = [
     option_b: "Influjo de gas",
     option_c: "Error de medición",
     option_d: "Pérdida",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 203,
@@ -1803,7 +1803,7 @@ questions_data = [
     option_b: "700 psi",
     option_c: "1700 psi",
     option_d: "500 psi",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 204,
@@ -1812,7 +1812,7 @@ questions_data = [
     option_b: "800 psi",
     option_c: "900 psi",
     option_d: "1000 psi",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 205,
@@ -1821,7 +1821,7 @@ questions_data = [
     option_b: "Indica migración de gas",
     option_c: "Indica pérdida",
     option_d: "Error",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 206,
@@ -1830,7 +1830,7 @@ questions_data = [
     option_b: "25 min",
     option_c: "30 min",
     option_d: "35 min",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 207,
@@ -1839,7 +1839,7 @@ questions_data = [
     option_b: "Detener operación",
     option_c: "Reducir presión",
     option_d: "Ignorar",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 208,
@@ -1848,7 +1848,7 @@ questions_data = [
     option_b: "10.5",
     option_c: "10.6",
     option_d: "11",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 209,
@@ -1857,7 +1857,7 @@ questions_data = [
     option_b: "Agua",
     option_c: "Petróleo",
     option_d: "Ninguno",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 210,
@@ -1866,7 +1866,7 @@ questions_data = [
     option_b: "Riesgo de blowout",
     option_c: "Baja producción",
     option_d: "Error menor",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 211,
@@ -1875,7 +1875,7 @@ questions_data = [
     option_b: "10",
     option_c: "12",
     option_d: "15",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 212,
@@ -1884,7 +1884,7 @@ questions_data = [
     option_b: "500",
     option_c: "600",
     option_d: "700",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 213,
@@ -1893,7 +1893,7 @@ questions_data = [
     option_b: "5400",
     option_c: "5600",
     option_d: "5800",
-    correct_answer: "c",
+    correct_answer: "c"
   },
   {
     item: 214,
@@ -1902,7 +1902,7 @@ questions_data = [
     option_b: "Riesgo de influjo",
     option_c: "No pasa nada",
     option_d: "Error",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 215,
@@ -1911,7 +1911,7 @@ questions_data = [
     option_b: "Planear control del pozo",
     option_c: "Reducir costos",
     option_d: "Controlar torque",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 216,
@@ -1920,7 +1920,7 @@ questions_data = [
     option_b: "Presión inicial de circulación",
     option_c: "Presión de formación",
     option_d: "Presión hidrostática",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 217,
@@ -1929,7 +1929,7 @@ questions_data = [
     option_b: "Presión final de circulación",
     option_c: "Presión inicial",
     option_d: "Presión casing",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 218,
@@ -1938,7 +1938,7 @@ questions_data = [
     option_b: "Riesgo de fractura",
     option_c: "No importa",
     option_d: "Error",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 219,
@@ -1947,7 +1947,7 @@ questions_data = [
     option_b: "No se puede circular",
     option_c: "Hay producción",
     option_d: "Hay flujo",
-    correct_answer: "b",
+    correct_answer: "b"
   },
   {
     item: 220,
@@ -1956,8 +1956,8 @@ questions_data = [
     option_b: "Mantener control de presión",
     option_c: "Reducir costos",
     option_d: "Aumentar caudal",
-    correct_answer: "b",
-  },
+    correct_answer: "b"
+  }
 ]
 
 questions_data.each do |q|

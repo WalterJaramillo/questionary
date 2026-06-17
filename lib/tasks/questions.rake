@@ -22,7 +22,7 @@ namespace :questions do
 
     workbook.default_sheet = sheet_name
 
-    required_columns = [ "ITEM", "PREGUNTA", "A", "B", "C", "D", "RESPUESTA CORRECTA" ]
+    required_columns = [ "ITEM", "SECCIÓN", "TEMA", "PREGUNTA", "A", "B", "C", "D", "RESPUESTA CORRECTA" ]
     header_row = workbook.row(1).map { |cell| cell.to_s.strip.upcase }
     missing_columns = required_columns.reject { |col| header_row.include?(col) }
 
@@ -49,6 +49,8 @@ namespace :questions do
         next
       end
 
+      seccion = workbook.cell(row_num, col_map["SECCIÓN"] + 1).to_s.strip
+      tema = workbook.cell(row_num, col_map["TEMA"] + 1).to_s.strip
       question_text = workbook.cell(row_num, col_map["PREGUNTA"] + 1)
       option_a = workbook.cell(row_num, col_map["A"] + 1)
       option_b = workbook.cell(row_num, col_map["B"] + 1)
@@ -65,6 +67,8 @@ namespace :questions do
 
       Question.create!(
         item: item.to_i,
+        seccion: seccion,
+        tema: tema,
         question_text: question_text.to_s,
         option_a: option_a.to_s,
         option_b: option_b.to_s,
