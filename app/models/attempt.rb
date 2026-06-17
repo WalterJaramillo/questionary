@@ -51,20 +51,20 @@ class Attempt < ApplicationRecord
 
     topics = answers.joins(:question)
       .where(is_correct: false)
-      .where.not(questions: { tema: [nil, ""] })
       .group("questions.tema")
       .having("COUNT(*) >= 2")
       .order(Arel.sql("COUNT(*) DESC"))
       .pluck(Arel.sql("questions.tema"), Arel.sql("COUNT(*)"))
+      .reject { |t, _| t.blank? || t.strip.empty? }
 
     return topics if topics.any?
 
     answers.joins(:question)
       .where(is_correct: false)
-      .where.not(questions: { tema: [nil, ""] })
       .group("questions.tema")
       .order(Arel.sql("COUNT(*) DESC"))
       .limit(1)
       .pluck(Arel.sql("questions.tema"), Arel.sql("COUNT(*)"))
+      .reject { |t, _| t.blank? || t.strip.empty? }
   end
 end
