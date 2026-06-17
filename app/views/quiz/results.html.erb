@@ -28,6 +28,7 @@
             </h3>
             <ul class="list-unstyled mb-0">
               <% @weak_topics.each do |tema, _| %>
+                <% next if tema.blank? %>
                 <li class="mb-2 p-2 rounded" style="background: rgba(220, 53, 69, 0.08);">
                   <strong>Debes reforzar más este tema:</strong> <%= tema %>
                 </li>
