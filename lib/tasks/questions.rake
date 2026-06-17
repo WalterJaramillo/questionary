@@ -39,13 +39,23 @@ namespace :questions do
 
     created = 0
     skipped = 0
+    updated = 0
 
     (2..workbook.last_row).each do |row_num|
       item = workbook.cell(row_num, col_map["ITEM"] + 1)
       next if item.nil?
 
-      if Question.exists?(item: item.to_i)
-        skipped += 1
+      seccion = workbook.cell(row_num, col_map["SECCIÓN"] + 1).to_s.strip
+      tema = workbook.cell(row_num, col_map["TEMA"] + 1).to_s.strip
+
+      existing = Question.find_by(item: item.to_i)
+      if existing
+        if existing.seccion.blank? || existing.tema.blank?
+          existing.update!(seccion: seccion, tema: tema)
+          updated += 1
+        else
+          skipped += 1
+        end
         next
       end
 
@@ -80,6 +90,6 @@ namespace :questions do
       created += 1
     end
 
-    puts "Import complete: #{created} created, #{skipped} skipped"
+    puts "Import complete: #{created} created, #{updated} updated, #{skipped} skipped"
   end
 end
