@@ -51,7 +51,7 @@ namespace :questions do
       existing = Question.find_by(item: item.to_i)
       if existing
         if existing.seccion.blank? || existing.tema.blank?
-          existing.update!(seccion: seccion, tema: tema)
+          existing.update_columns(seccion: seccion, tema: tema)
           updated += 1
         else
           skipped += 1
