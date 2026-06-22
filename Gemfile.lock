@@ -481,7 +481,7 @@ DEPENDENCIES
   turbo-rails
   tzinfo-data
   web-console
-  will_paginate
+  will_paginate (~> 4.0)
 
 BUNDLED WITH
    2.5.3

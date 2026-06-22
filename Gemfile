@@ -53,7 +53,7 @@ gem "ransack"
 gem "caxlsx"
 
 # Pagination
-gem "will_paginate"
+gem "will_paginate", "~> 4.0"
 
 # JavaScript runtime for asset compilation in production
 gem "execjs"

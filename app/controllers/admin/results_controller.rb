@@ -5,8 +5,7 @@ class Admin::ResultsController < Admin::ApplicationController
       .ransack(params[:q])
     @attempts = @q.result
       .order(completed_at: :desc)
-      .page(params[:page])
-      .per(20)
+      .paginate(page: params[:page], per_page: 20)
   end
 
   def export

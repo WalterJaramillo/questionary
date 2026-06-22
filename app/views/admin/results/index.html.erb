@@ -2,18 +2,18 @@
 
 <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
   <h1 class="h3 fw-bold text-dark mb-0">Resultados</h1>
-  <%= link_to "Exportar Excel", admin_results_export_path(q: params[:q], format: :xlsx), class: "btn btn-success" %>
+  <%= link_to "Exportar Excel", admin_results_export_path(q: params[:q]&.to_unsafe_h || {}, format: :xlsx), class: "btn btn-success" %>
 </div>
 
 <div class="chart-container mb-4">
   <%= search_form_for @q, url: admin_results_path, method: :get, class: "row g-3 align-items-end" do |f| %>
     <div class="col-md-4">
-      <%= f.label :attempt_completed_at_gteq, "Desde", class: "form-label fw-semibold" %>
-      <%= f.date_field :attempt_completed_at_gteq, value: params.dig(:q, :attempt_completed_at_gteq), class: "form-control" %>
+      <%= f.label :completed_at_gteq, "Desde", class: "form-label fw-semibold" %>
+      <%= f.date_field :completed_at_gteq, value: params.dig(:q, :completed_at_gteq), class: "form-control" %>
     </div>
     <div class="col-md-4">
-      <%= f.label :attempt_completed_at_lteq, "Hasta", class: "form-label fw-semibold" %>
-      <%= f.date_field :attempt_completed_at_lteq, value: params.dig(:q, :attempt_completed_at_lteq), class: "form-control" %>
+      <%= f.label :completed_at_lteq, "Hasta", class: "form-label fw-semibold" %>
+      <%= f.date_field :completed_at_lteq, value: params.dig(:q, :completed_at_lteq), class: "form-control" %>
     </div>
     <div class="col-md-4">
       <%= f.submit "Filtrar", class: "btn btn-primary" %>
@@ -60,7 +60,7 @@
   </div>
 
   <div class="mt-3">
-    <%= paginate @attempts, theme: 'bootstrap-5' %>
+    <%= will_paginate @attempts %>
   </div>
 <% else %>
   <div class="chart-container text-center py-5">
