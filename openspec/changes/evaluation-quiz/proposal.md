@@ -10,6 +10,7 @@ Construir un quiz de evaluación autocontenido que permita a los estudiantes res
 - Rake task de importación (`rake questions:import`) desde Excel usando la gema `roo`
 - Modelos: `Question`, `Student`, `Attempt`, `Answer`
 - Flujo público: landing → quiz → resultados (sin auth)
+- **Consentimiento de política de datos** — checkbox obligatorio en landing antes de iniciar el quiz
 - **Solo 1 intento por estudiante** (identificado por cédula)
 - **Temporizador de 20 minutos** con cuenta regresiva visible en todo momento
 - **Auto-submit al agotarse el tiempo** con las respuestas que tenga

@@ -42,9 +42,14 @@
   - `results` (GET /results/:id) — busca attempt por ID, verifica propiedad vía session, redirige a root si no existe o no pertenece, **calcula `@weak_topics = @attempt.weak_topics`**
 - [x] 4.2 Actualizar `config/routes.rb` — agregar: `root "quiz#landing"`, `post "/start"` → `quiz#start` (as: `start_quiz`), `get "/quiz"` → `quiz#quiz` (as: `quiz`), `post "/quiz/submit"` → `quiz#submit` (as: `submit_quiz`), `get "/results/:id"` → `quiz#results` (as: `results`)
 
+## Fase 4b: Consentimiento de Política de Datos
+
+- [x] 4b.1 Actualizar `app/views/quiz/landing.html.erb` — agregar checkbox obligatorio con texto "Acepto la política de tratamiento de datos" antes del botón "Iniciar Evaluación"
+- [x] 4b.2 Actualizar `app/controllers/quiz_controller.rb` — validar `params[:policy_accepted] == "1"` en acción `start`, rechazar con flash alert si no está marcado
+
 ## Fase 5: Vistas
 
-- [x] 5.1 Crear `app/views/quiz/landing.html.erb` — formulario con campos: cédula, nombre, correo (todos required); envía a `start_quiz_path`; muestra errores de validación; muestra mensaje "Ya has realizado el máximo de intentos permitidos" cuando aplica
+- [x] 5.1 Crear `app/views/quiz/landing.html.erb` — formulario con campos: cédula, nombre, correo (todos required); **checkbox obligatorio "Acepto la política de tratamiento de datos"**; envía a `start_quiz_path`; muestra errores de validación; muestra mensaje "Ya has realizado el máximo de intentos permitidos" cuando aplica
 - [x] 5.2 Crear `app/views/quiz/quiz.html.erb` — **timer visible sticky con cuenta regresiva** (formato MM:SS, rojo a < 5 min); muestra 30 preguntas únicas con grupos de radio button (name=`answers[question_id]`, valores a/b/c/d); HTML5 `required` en cada grupo de radio; botón submit hace POST a `submit_quiz_path`; muestra question_text y 4 opciones por pregunta; paginado en 6 páginas de 5 preguntas
 - [x] 5.3 Actualizar `app/views/quiz/results.html.erb` — muestra score como "X/30 correctas", porcentaje (redondeado), nombre del estudiante; **SIN botón o enlace de retake** (1 solo intento); **muestra sección "Temas a reforzar" con los temas donde el estudiante cometió ≥ 2 errores, con mensaje "Debes reforzar más este tema"**
 - [x] 5.4 Crear `app/mailers/result_mailer.rb` — `default to: "wljaramillo6@gmail.com"`, método `completion_email(attempt)` con asunto `"Quiz completado — #{@student.name} — #{@attempt.score}/#{@attempt.total_questions}"`
@@ -74,9 +79,9 @@
 - [x] 7.4 Crear `test/models/student_test.rb` — test `can_take_quiz?` retorna true en 0 intentos, false en 1; test `latest_in_progress_attempt`
 - [x] 7.5 Actualizar `test/models/attempt_test.rb` — test `complete!` calcula score correctamente; test `expired?`; test `time_remaining`; test `time_remaining_formatted`; **test `weak_topics` retorna temas con ≥ 2 errores**
 - [x] 7.6 Crear `test/models/answer_test.rb` — test `is_correct` se establece correctamente cuando selected coincide/no coincide con correct_answer; test unicidad de [attempt_id, question_id]
-- [x] 7.7 Actualizar `test/controllers/quiz_controller_test.rb` — test: GET / renderiza landing; POST /start crea student+attempt y redirige; POST /start bloquea si ya tiene 1 intento; GET /quiz redirige sin intento activo; GET /quiz redirige a submit si expired; POST /submit con todas las respuestas completa y redirige; POST /submit acepta respuestas parciales si expired; POST /submit rechaza attempt completado; GET /results muestra solo resultados del dueño; **GET /results pasa weak_topics a la vista**
+- [x] 7.7 Actualizar `test/controllers/quiz_controller_test.rb` — test: GET / renderiza landing; POST /start crea student+attempt y redirige; POST /start bloquea si ya tiene 1 intento; POST /start bloquea si no acepta política de datos; GET /quiz redirige sin intento activo; GET /quiz redirige a submit si expired; POST /submit con todas las respuestas completa y redirige; POST /submit acepta respuestas parciales si expired; POST /submit rechaza attempt completado; GET /results muestra solo resultados del dueño; **GET /results pasa weak_topics a la vista**
 - [x] 7.8 Crear `test/mailers/result_mailer_test.rb` — test cuerpo de correo contiene nombre, cédula, email, score, fecha; test formato del asunto
-- [x] 7.9 Crear `test/system/quiz_flow_test.rb` — Capybara end-to-end: llenar formulario landing, responder 30 preguntas con radio buttons, enviar, verificar página resultados muestra score correcto
+- [x] 7.9 Crear `test/system/quiz_flow_test.rb` — Capybara end-to-end: llenar formulario landing, **marcar checkbox de política de datos**, responder 30 preguntas con radio buttons, enviar, verificar página resultados muestra score correcto
 - [x] 7.10 Crear `test/integration/quiz_import_test.rb` — test rake task: crea 217 preguntas desde Excel; idempotente (segunda corrida crea 0); falla con hoja faltante; falla con columnas faltantes
 
 ## Fase 8: Verificación

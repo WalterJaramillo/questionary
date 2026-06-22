@@ -6,6 +6,43 @@ Define el comportamiento end-to-end del quiz de evaluación autocontenido: regis
 
 ## Requisitos
 
+### Requisito: Consentimiento de Política de Datos
+
+El sistema DEBE requerir que el estudiante acepte explícitamente la política de tratamiento de datos antes de poder iniciar el quiz. El formulario de landing DEBE mostrar un checkbox obligatorio con el texto "Acepto la política de tratamiento de datos". Si el checkbox no está marcado, el formulario NO DEBE poder enviarse.
+
+#### Escenario: Checkbox visible en el formulario de landing
+
+- DADO que un estudiante accede a la página de landing
+- CUANDO se renderiza el formulario
+- ENTONCES se muestra un checkbox con el texto "Acepto la política de tratamiento de datos"
+- Y el checkbox es obligatorio (atributo `required`)
+- Y el checkbox aparece antes del botón "Iniciar Evaluación"
+
+#### Escenario: Envío sin aceptar la política
+
+- DADO que un estudiante llena todos los campos del formulario
+- PERO NO marca el checkbox de la política de datos
+- CUANDO intenta enviar el formulario
+- ENTONCES el envío se bloquea en el cliente (validación HTML `required`)
+- Y el estudiante NO es redirigido a la página del quiz
+
+#### Escenario: Bypass del checkbox en el servidor
+
+- DADO que una petición POST a /start llega sin el parámetro `policy_accepted`
+- CUANDO se procesa la petición en el servidor
+- ENTONCES se rechaza con el mensaje "Debes aceptar la política de tratamiento de datos"
+- Y se redirige a la página de landing
+- Y NO se crea ningún registro Student ni Attempt
+
+#### Escenario: Envío exitoso con política aceptada
+
+- DADO que un estudiante llena todos los campos del formulario
+- Y marca el checkbox de la política de datos
+- CUANDO envía el formulario
+- ENTONCES el sistema procesa el registro normalmente
+- Y se crea el Student y Attempt correspondientes
+- Y el estudiante es redirigido a la página del quiz
+
 ### Requisito: Registro de Estudiante
 
 El sistema DEBE identificar estudiantes por su cédula (un string único). Cuando un estudiante envía el formulario de landing con cédula, nombre y correo, el sistema DEBE crear un registro Student si no existe, o usar el existente.

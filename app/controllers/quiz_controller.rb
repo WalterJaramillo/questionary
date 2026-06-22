@@ -16,6 +16,11 @@ class QuizController < ApplicationController
       redirect_to root_path and return
     end
 
+    if params[:policy_accepted] != "1"
+      flash[:alert] = "Debes aceptar la política de tratamiento de datos"
+      redirect_to root_path and return
+    end
+
     student = Student.find_or_create_by(cedula: cedula) do |s|
       s.name = name
       s.email = email
