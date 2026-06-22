@@ -43,6 +43,18 @@ gem "image_processing", "~> 1.2"
 # Excel file parsing for question import
 gem "roo"
 
+# Authentication
+gem "devise"
+
+# Search/filter for admin results
+gem "ransack"
+
+# Excel file generation for export
+gem "caxlsx"
+
+# Pagination
+gem "will_paginate"
+
 # JavaScript runtime for asset compilation in production
 gem "execjs"
 

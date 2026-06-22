@@ -5,7 +5,7 @@ class QuizFlowIntegrationTest < ActionDispatch::IntegrationTest
     get root_path
     assert_response :success
 
-    post start_quiz_path, params: { cedula: "444555666", name: "Flow Tester", email: "flow@test.com", zona: "Piedemonte" }
+    post start_quiz_path, params: { cedula: "444555666", name: "Flow Tester", email: "flow@test.com", zona: "Piedemonte", policy_accepted: "1" }
     assert_redirected_to quiz_path
 
     follow_redirect!
@@ -27,7 +27,7 @@ class QuizFlowIntegrationTest < ActionDispatch::IntegrationTest
   test "second attempt is blocked" do
     student = Student.create!(cedula: "222333", name: "One Attempt", email: "one@test.com", zona: "Castilla", attempts_count: 1)
 
-    post start_quiz_path, params: { cedula: student.cedula, name: student.name, email: student.email, zona: "Castilla" }
+    post start_quiz_path, params: { cedula: student.cedula, name: student.name, email: student.email, zona: "Castilla", policy_accepted: "1" }
     assert_redirected_to root_path
     follow_redirect!
     assert_match /máximo de intentos/, response.body

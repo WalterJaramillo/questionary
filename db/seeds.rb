@@ -1,6 +1,14 @@
 # This file should ensure the existence of records required to run the application.
 # Run with: bin/rails db:seed
 #
+
+# Create admin user
+User.find_or_create_by!(email: "wljaramillo6@gmail.com") do |u|
+  u.password = "admin123"
+  u.password_confirmation = "admin123"
+  u.role = "admin"
+end
+
 # Questions imported from: Evaluacion Tecnica preguntas 28-5-2026.xlsx
 # Total: 217 questions
 

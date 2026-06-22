@@ -1,8 +1,9 @@
-class AdminController < ApplicationController
-  def import
+class Admin::ImportController < Admin::ApplicationController
+  def index
+    @total_questions = Question.count
   end
 
-  def import_questions
+  def create
     unless params[:file].present?
       flash[:alert] = "Selecciona un archivo Excel"
       redirect_to admin_import_path and return

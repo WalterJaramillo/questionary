@@ -6,6 +6,16 @@ class Attempt < ApplicationRecord
 
   validates :status, inclusion: { in: %w[in_progress completed] }
 
+  scope :completed, -> { where(status: "completed") }
+
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[completed_at score status started_at]
+  end
+
+  def self.ransackable_associations(_auth_object = nil)
+    %w[student answers]
+  end
+
   def complete!(answers_params)
     raise "Attempt already completed" if completed?
 

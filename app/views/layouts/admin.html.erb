@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title><%= content_for(:title) || "Admin - Questionary" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+
+    <style>
+      body {
+        background: #f4f6f9;
+        min-height: 100vh;
+      }
+      .admin-wrapper {
+        display: flex;
+        min-height: 100vh;
+      }
+      .admin-sidebar {
+        width: 260px;
+        background: linear-gradient(180deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+        color: #fff;
+        padding: 1.5rem 0;
+        position: fixed;
+        height: 100vh;
+        overflow-y: auto;
+        transition: transform 0.3s ease;
+        z-index: 1040;
+      }
+      .admin-sidebar .sidebar-brand {
+        padding: 0 1.5rem 1.5rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        margin-bottom: 1rem;
+      }
+      .admin-sidebar .sidebar-brand h4 {
+        margin: 0;
+        font-weight: 700;
+        color: #00b4d8;
+      }
+      .admin-sidebar .nav-link {
+        color: rgba(255,255,255,0.75);
+        padding: 0.75rem 1.5rem;
+        font-weight: 500;
+        transition: all 0.2s;
+      }
+      .admin-sidebar .nav-link:hover {
+        color: #fff;
+        background: rgba(255,255,255,0.08);
+      }
+      .admin-sidebar .nav-link.active {
+        color: #fff;
+        background: linear-gradient(90deg, #00b4d8 0%, #0077b6 100%);
+      }
+      .admin-sidebar .nav-link svg {
+        margin-right: 0.5rem;
+      }
+      .admin-sidebar .logout-link {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 0;
+        right: 0;
+        padding: 0 1.5rem;
+      }
+      .admin-content {
+        flex: 1;
+        margin-left: 260px;
+        padding: 2rem;
+      }
+      .admin-topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+      .sidebar-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      @media (max-width: 768px) {
+        .admin-sidebar {
+          transform: translateX(-100%);
+        }
+        .admin-sidebar.show {
+          transform: translateX(0);
+        }
+        .admin-content {
+          margin-left: 0;
+          padding: 1rem;
+        }
+        .sidebar-toggle {
+          display: block;
+        }
+        .sidebar-overlay {
+          display: none;
+          position: fixed;
+          inset: 0;
+          background: rgba(0,0,0,0.5);
+          z-index: 1035;
+        }
+        .sidebar-overlay.show {
+          display: block;
+        }
+      }
+      .stat-card {
+        background: #fff;
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        border-left: 4px solid #00b4d8;
+      }
+      .stat-card .stat-value {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #0f2027;
+      }
+      .stat-card .stat-label {
+        color: #6c757d;
+        font-size: 0.875rem;
+      }
+      .chart-container {
+        background: #fff;
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      }
+      .quick-actions .btn {
+        padding: 0.75rem 1.5rem;
+        font-weight: 600;
+      }
+    </style>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div class="admin-wrapper">
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <nav class="admin-sidebar" id="adminSidebar">
+        <div class="sidebar-brand">
+          <h4>Questionary</h4>
+          <small class="text-white-50">Panel Admin</small>
+        </div>
+
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <%= link_to admin_dashboard_path, class: "nav-link #{current_page?(admin_dashboard_path) ? 'active' : ''}" do %>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-4h3v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146z"/></svg>
+              Dashboard
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to admin_results_path, class: "nav-link #{current_page?(admin_results_path) ? 'active' : ''}" do %>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-5v3h5V4zm0 4h-5v3h5V8zm0 4h-5v3h3a2 2 0 0 0 2-2v-1zm-6 0h-5v3h5v-3zm-6 0h-5v3h5v-3zm0-4h5v3H3V8zm0-4h5v3H3V4z"/></svg>
+              Resultados
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to admin_import_path, class: "nav-link #{current_page?(admin_import_path) ? 'active' : ''}" do %>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
+              Importar
+            <% end %>
+          </li>
+        </ul>
+
+        <div class="logout-link">
+          <%= button_to destroy_user_session_path, method: :delete, class: "btn btn-outline-light w-100" do %>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="me-1" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/><path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/></svg>
+            Cerrar sesión
+          <% end %>
+        </div>
+      </nav>
+
+      <main class="admin-content">
+        <div class="admin-topbar">
+          <button class="sidebar-toggle" id="sidebarToggle" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/></svg>
+          </button>
+          <div></div>
+        </div>
+
+        <% if notice %>
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <%= notice %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+        <% end %>
+        <% if alert %>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <%= alert %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+        <% end %>
+
+        <%= yield %>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.getElementById('sidebarToggle')?.addEventListener('click', function() {
+        document.getElementById('adminSidebar').classList.toggle('show');
+        document.getElementById('sidebarOverlay').classList.toggle('show');
+      });
+      document.getElementById('sidebarOverlay')?.addEventListener('click', function() {
+        document.getElementById('adminSidebar').classList.remove('show');
+        this.classList.remove('show');
+      });
+    </script>
+  </body>
+</html>

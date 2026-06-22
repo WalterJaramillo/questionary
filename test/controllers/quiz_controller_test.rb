@@ -7,7 +7,7 @@ class QuizControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "POST /start creates student and attempt, redirects to quiz" do
-    post start_quiz_path, params: { cedula: "99999", name: "Test User", email: "test@test.com", zona: "Piedemonte" }
+    post start_quiz_path, params: { cedula: "99999", name: "Test User", email: "test@test.com", zona: "Piedemonte", policy_accepted: "1" }
     assert_redirected_to quiz_path
 
     student = Student.find_by(cedula: "99999")
@@ -19,14 +19,14 @@ class QuizControllerTest < ActionDispatch::IntegrationTest
   test "POST /start blocks if already has 1 attempt" do
     student = Student.create!(cedula: "88888", name: "Blocked", email: "blocked@test.com", zona: "Castilla", attempts_count: 1)
 
-    post start_quiz_path, params: { cedula: student.cedula, name: student.name, email: student.email, zona: "Castilla" }
+    post start_quiz_path, params: { cedula: student.cedula, name: student.name, email: student.email, zona: "Castilla", policy_accepted: "1" }
     assert_redirected_to root_path
     follow_redirect!
     assert_match /máximo de intentos/, response.body
   end
 
   test "POST /start with blank fields redirects with error" do
-    post start_quiz_path, params: { cedula: "", name: "Test", email: "test@test.com", zona: "Piedemonte" }
+    post start_quiz_path, params: { cedula: "", name: "Test", email: "test@test.com", zona: "Piedemonte", policy_accepted: "1" }
     assert_redirected_to root_path
   end
 
@@ -41,14 +41,14 @@ class QuizControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "GET /quiz shows 5 questions per page" do
-    post start_quiz_path, params: { cedula: "123456789", name: "Quiz Test", email: "quiz1@test.com", zona: "Neiva" }
+    post start_quiz_path, params: { cedula: "123456789", name: "Quiz Test", email: "quiz1@test.com", zona: "Neiva", policy_accepted: "1" }
     follow_redirect!
     assert_response :success
     assert_select "input[type=radio]", count: 20
   end
 
   test "GET /quiz redirects to submit if expired" do
-    post start_quiz_path, params: { cedula: "777777", name: "Expired", email: "expired@test.com", zona: "Tibu" }
+    post start_quiz_path, params: { cedula: "777777", name: "Expired", email: "expired@test.com", zona: "Tibu", policy_accepted: "1" }
     follow_redirect!
 
     student = Student.find_by(cedula: "777777")
@@ -60,7 +60,7 @@ class QuizControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "POST /submit with all 30 answers completes and redirects" do
-    post start_quiz_path, params: { cedula: "987654321", name: "Full Test", email: "full@test.com", zona: "Rubiales" }
+    post start_quiz_path, params: { cedula: "987654321", name: "Full Test", email: "full@test.com", zona: "Rubiales", policy_accepted: "1" }
     follow_redirect!
 
     student = Student.find_by(cedula: "987654321")
@@ -74,7 +74,7 @@ class QuizControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "POST /submit accepts partial answers if expired" do
-    post start_quiz_path, params: { cedula: "666666", name: "Partial", email: "partial@test.com", zona: "CP9" }
+    post start_quiz_path, params: { cedula: "666666", name: "Partial", email: "partial@test.com", zona: "CP9", policy_accepted: "1" }
     follow_redirect!
 
     student = Student.find_by(cedula: "666666")
@@ -93,7 +93,7 @@ class QuizControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "POST /submit rejects completed attempt" do
-    post start_quiz_path, params: { cedula: "555666777", name: "Double", email: "double@test.com", zona: "Apiay" }
+    post start_quiz_path, params: { cedula: "555666777", name: "Double", email: "double@test.com", zona: "Apiay", policy_accepted: "1" }
     follow_redirect!
 
     student = Student.find_by(cedula: "555666777")
@@ -113,7 +113,7 @@ class QuizControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "GET /results shows score for valid attempt" do
-    post start_quiz_path, params: { cedula: "111222333", name: "Results", email: "results@test.com", zona: "Provincia" }
+    post start_quiz_path, params: { cedula: "111222333", name: "Results", email: "results@test.com", zona: "Provincia", policy_accepted: "1" }
     follow_redirect!
 
     student = Student.find_by(cedula: "111222333")
@@ -136,7 +136,7 @@ class QuizControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "GET /results passes weak_topics to view" do
-    post start_quiz_path, params: { cedula: "222333444", name: "Weak Topics", email: "weak@test.com", zona: "Nare" }
+    post start_quiz_path, params: { cedula: "222333444", name: "Weak Topics", email: "weak@test.com", zona: "Nare", policy_accepted: "1" }
     follow_redirect!
 
     student = Student.find_by(cedula: "222333444")
