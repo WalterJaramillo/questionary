@@ -65,6 +65,17 @@
             </div>
           </div>
         </div>
+
+        <% if index == 1 %>
+          <div class="text-center my-3">
+            <img src="/dos.jpeg" alt="" class="img-fluid rounded-3" style="max-height: 120px; object-fit: cover; opacity: 0.85;">
+          </div>
+        <% end %>
+        <% if index == 3 %>
+          <div class="text-center my-3">
+            <img src="/tres.jpeg" alt="" class="img-fluid rounded-3" style="max-height: 120px; object-fit: cover; opacity: 0.85;">
+          </div>
+        <% end %>
       <% end %>
 
       <% @answered.each do |q_id, answer| %>
